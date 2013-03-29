@@ -1,0 +1,5 @@
+Private-Package: org.example.hello.impl
+-buildpath: org.example.hello;version=latest,\
+	biz.aQute.bnd.annotation,\
+	com.springsource.org.junit;version=4.10.0
+Service-Component: *

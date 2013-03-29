@@ -1,0 +1,2 @@
+Export-Package: org.example.hello
+-buildpath: biz.aQute.bnd.annotation

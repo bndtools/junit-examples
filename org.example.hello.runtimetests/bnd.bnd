@@ -1,0 +1,21 @@
+Private-Package: org.example.hello.runtimetests.junit3,\
+	org.example.hello.runtimetests.junit4,\
+	org.example.hello.runtimetests
+
+Test-Cases: ${classes;CONCRETE;EXTENDS;junit.framework.TestCase},${classes;ANNOTATION;org.junit.Test}
+
+-runbundles: org.apache.felix.scr;version='[1.6.2,1.6.3)',\
+	org.example.hello;version=latest,\
+	org.example.hello.impl;version=latest
+-runee: JavaSE-1.6
+-runvm: -ea
+-runfw: org.apache.felix.framework
+-buildpath: osgi.core;version='[4.2,5)',\
+	osgi.cmpn,\
+	com.springsource.org.junit;version=4.10,\
+	org.mockito.mockito-all,\
+	org.example.hello;version=latest
+-runsystempackages: sun.reflect
+-runrequires: osgi.identity;filter:='(osgi.identity=org.example.hello.runtimetest)',\
+	osgi.identity;filter:='(osgi.identity=org.example.hello.impl)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.scr)'
